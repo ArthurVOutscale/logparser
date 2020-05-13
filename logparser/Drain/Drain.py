@@ -254,8 +254,7 @@ class LogParser:
 
         self.load_data()
 
-        count = 0
-        for idx, line in self.df_log.iterrows():
+        for count, line in self.df_log.iterrows():
             logID = line['LineId']
             logmessageL = self.preprocess(line['Content']).strip().split()
             # logmessageL = filter(lambda x: x != '', re.split('[\s=:,]', self.preprocess(line['Content'])))
@@ -274,7 +273,6 @@ class LogParser:
                 if ' '.join(newTemplate) != ' '.join(matchCluster.logTemplate): 
                     matchCluster.logTemplate = newTemplate
 
-            count += 1
             if count % 1000 == 0 or count == len(self.df_log):
                 print('Processed {0:.1f}% of log lines.'.format(count * 100.0 / len(self.df_log)))
 

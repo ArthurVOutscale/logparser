@@ -232,8 +232,7 @@ class LogParser:
         rootNode = Node()
         logCluL = []
 
-        count = 0
-        for idx, line in self.df_log.iterrows():
+        for count, line in self.df_log.iterrows():
             logID = line['LineId']
             logmessageL = list(filter(lambda x: x != '', re.split(r'[\s=:,]', self.preprocess(line['Content']))))
             constLogMessL = [w for w in logmessageL if w != '<*>']
@@ -262,7 +261,6 @@ class LogParser:
                             self.addSeqToPrefixTree(rootNode, matchCluster)
             if matchCluster:
                 matchCluster.logIDL.append(logID)
-            count += 1
             if count % 1000 == 0 or count == len(self.df_log):
                 print('Processed {0:.1f}% of log lines.'.format(count * 100.0 / len(self.df_log)))
             
