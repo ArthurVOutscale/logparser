@@ -128,7 +128,7 @@ benchmark_settings = {
         'log_format': '<Logrecord> <Date> <Time> <Pid> <Level> <Component> \[<ADDR>\] <Content>',
         'CT': 0.9,
         'lowerBound': 0.25,
-        'regex': [r'((\d+\.){3}\d+,?)+', r'/.+?\s', r'\d+']
+        'regex': [r'((\d+\.){3}\d+,?)+', r'\.+?\s', r'\d+']
     },
 
     'Mac': {

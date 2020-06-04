@@ -112,7 +112,7 @@ benchmark_settings = {
     'OpenStack': {
         'log_file': 'OpenStack/OpenStack_2k.log',
         'log_format': '<Logrecord> <Date> <Time> <Pid> <Level> <Component> \[<ADDR>\] <Content>',
-        'regex': [r'((\d+\.){3}\d+,?)+', r'/.+?\s', r'\d+'],
+        'regex': [r'((\d+\.){3}\d+,?)+', r'\.+?\s', r'\d+'],
         'split_threshold': 8
         },
 
